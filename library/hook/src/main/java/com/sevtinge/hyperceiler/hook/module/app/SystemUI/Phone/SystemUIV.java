@@ -23,7 +23,6 @@ import static com.sevtinge.hyperceiler.hook.utils.devicesdk.SystemSDKKt.isMoreSm
 
 import com.hchen.database.HookBase;
 import com.sevtinge.hyperceiler.hook.module.base.BaseModule;
-import com.sevtinge.hyperceiler.hook.module.hook.systemui.other.ToastBlur;
 import com.sevtinge.hyperceiler.hook.module.hook.systemframework.UnlockAlwaysOnDisplay;
 import com.sevtinge.hyperceiler.hook.module.hook.systemframework.volume.VolumeMediaSteps;
 import com.sevtinge.hyperceiler.hook.module.hook.systemui.AllowManageAllNotifications;
@@ -96,6 +95,7 @@ import com.sevtinge.hyperceiler.hook.module.hook.systemui.other.DisableMiuiMulti
 import com.sevtinge.hyperceiler.hook.module.hook.systemui.other.MonetThemeOverlay;
 import com.sevtinge.hyperceiler.hook.module.hook.systemui.other.NotificationFreeform;
 import com.sevtinge.hyperceiler.hook.module.hook.systemui.other.RemoveMiuiMultiWinSwitch;
+import com.sevtinge.hyperceiler.hook.module.hook.systemui.other.ToastBlur;
 import com.sevtinge.hyperceiler.hook.module.hook.systemui.plugin.NewPluginHelperKt;
 import com.sevtinge.hyperceiler.hook.module.hook.systemui.statusbar.BlurEnable;
 import com.sevtinge.hyperceiler.hook.module.hook.systemui.statusbar.DoubleTapToSleep;
@@ -184,7 +184,7 @@ public class SystemUIV extends BaseModule {
         if (mPrefsMap.getBoolean("system_ui_statusbar_network_speed_all_status_enable")) {
             initHook(NewNetworkSpeed.INSTANCE, true);
             initHook(NewNetworkSpeedStyle.INSTANCE, true);
-            initHook(new NetworkSpeedSpacing(), mPrefsMap.getInt("system_ui_statusbar_network_speed_update_spacing", 3) != 3);
+            initHook(new NetworkSpeedSpacing(), mPrefsMap.getInt("system_ui_statusbar_network_speed_update_spacing", 40) != 40);
             initHook(new NetworkSpeedSec(), mPrefsMap.getBoolean("system_ui_statusbar_network_speed_sec_unit"));
         }
 

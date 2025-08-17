@@ -187,7 +187,7 @@ public class SystemUIU extends BaseModule {
         if (mPrefsMap.getBoolean("system_ui_statusbar_network_speed_all_status_enable")) {
             initHook(NewNetworkSpeed.INSTANCE, true);
             initHook(NewNetworkSpeedStyle.INSTANCE, true);
-            initHook(new NetworkSpeedSpacing(), mPrefsMap.getInt("system_ui_statusbar_network_speed_update_spacing", 3) != 3);
+            initHook(new NetworkSpeedSpacing(), mPrefsMap.getInt("system_ui_statusbar_network_speed_update_spacing", 40) != 40);
             initHook(new NetworkSpeedSec(), mPrefsMap.getBoolean("system_ui_statusbar_network_speed_sec_unit"));
         }
 
